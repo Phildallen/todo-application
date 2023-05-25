@@ -22,9 +22,9 @@ class todoItemsController
                         ResponseInterface $response,
                         array $args): ResponseInterface
     {
-//        $data = $this->todoItemsModel->getTodoItems();
-//        $response = $this->renderer->render($response,'todoItems.php', ['todoItems' => $data]);
-        $response->getBody()->write('Hello from a todoItemsController');
+        $data = $this->todoItemsModel->getTodoItems();
+        $response = $this->renderer->render($response,'todoItems.php', ['todoItems' => $data]);
+//        $response->getBody()->write('Hello from a todoItemsController');
         return $response;
     }
 }
