@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+use App\Controllers\doneItemsController;
 use App\Controllers\todoItemsController;
 use App\Controllers\formTodoController;
 use App\Controllers\addTodoController;
@@ -14,5 +15,5 @@ return function (App $app) {
     $app->get('/todo', todoItemsController::class);
     $app->get('/newtodo',formTodoController::class);
     $app->post('/todo', addTodoController::class);
-
+    $app->get('/done', doneItemsController::class);
 };

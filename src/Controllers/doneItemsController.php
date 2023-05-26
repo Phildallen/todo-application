@@ -7,7 +7,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Views\PhpRenderer;
 
-class todoItemsController
+class doneItemsController
 {
     private PhpRenderer $renderer;
     private TodoItemsModel $todoItemsModel;
@@ -19,12 +19,11 @@ class todoItemsController
     }
 
     function __invoke(RequestInterface $request,
-                        ResponseInterface $response,
-                        array $args): ResponseInterface
+                      ResponseInterface $response,
+                      array $args): ResponseInterface
     {
-        $data = $this->todoItemsModel->getTodoItems(0);
-        $response = $this->renderer->render($response,'todoItems.php', ['todoItems' => $data]);
-//        $response->getBody()->write('Hello from a todoItemsController');
+        $data = $this->todoItemsModel->getTodoItems(1);
+        $response = $this->renderer->render($response,'doneItems.php', ['doneItems' => $data]);
         return $response;
     }
 }

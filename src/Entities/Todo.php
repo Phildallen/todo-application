@@ -5,8 +5,10 @@ namespace App\Entities;
 class Todo
 {
     private int $id;
-    private string $item;
+    private string $tasktitle;
+    private string $taskbody;
     private string $added;
+    private string $completeby;
     private int $completed;
 
     /**
@@ -28,17 +30,33 @@ class Todo
     /**
      * @return string
      */
-    public function getItem(): string
+    public function getTasktitle(): string
     {
-        return $this->item;
+        return $this->tasktitle;
     }
 
     /**
-     * @param string $item
+     * @param string $tasktitle
      */
-    public function setItem(string $item): void
+    public function setTasktitle(string $tasktitle): void
     {
-        $this->item = $item;
+        $this->tasktitle = $tasktitle;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTaskbody(): string
+    {
+        return $this->taskbody;
+    }
+
+    /**
+     * @param string $taskbody
+     */
+    public function setTaskbody(string $taskbody): void
+    {
+        $this->taskbody = $taskbody;
     }
 
     /**
@@ -58,6 +76,22 @@ class Todo
     }
 
     /**
+     * @return string
+     */
+    public function getCompleteby(): string
+    {
+        return $this->completeby;
+    }
+
+    /**
+     * @param string $completeby
+     */
+    public function setCompleteby(string $completeby): void
+    {
+        $this->completeby = $completeby;
+    }
+
+    /**
      * @return int
      */
     public function getCompleted(): int
@@ -72,5 +106,7 @@ class Todo
     {
         $this->completed = $completed;
     }
+
+
 
 }

@@ -5,14 +5,28 @@
     <title>To do list</title>
 </head>
 <body>
-<h1>Our Books</h1>
-<ul>
+<h1>To Do List</h1>
+<table>
+    <tr>
+        <th>Item no.</th>
+        <th>Task</th>
+        <th>Details</th>
+        <th>Complete By</th>
+        <th>Date created</th>
+        <th>Completed</th>
     <?php
     foreach ($todoItems as $todoItem) {
-//        echo '<li>' . $book['title'] . ' - ' . $book['author'] . '</li>';
-        echo '<li>' . $todoItem->getId() . ' - ' . $todoItem->getItem() . ' - ' . $todoItem->getAdded() . ' - ' . $todoItem->getCompleted() . '</li>';
+        $complete = $todoItem->getCompleted() === 1 ? 'Yes' : 'No';
+        echo '<tr><td>' . $todoItem->getId()
+            . '</td><td>' . $todoItem->getTasktitle()
+            . '</td><td>' . $todoItem->getTaskbody()
+            . '</td><td>' . $todoItem->getCompleteby()
+            . '</td><td>' . $todoItem->getAdded()
+            . '</td><td>' . $complete
+            . '</td></tr>';
     }
     ?>
-</ul>
+</table>
+<a href="/newtodo">New task</a>
 </body>
 </html>
